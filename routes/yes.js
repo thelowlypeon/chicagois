@@ -6,10 +6,11 @@ exports.index = function(http) {
   return function(req, res){
     var query = req.params.query;
 
+    var offset = Math.floor(Math.random() * 100) + 1;
     var options = {
       host: 'ootheloop.com',
       port: 80,
-      path: '/recent.json?limit=1',
+      path: '/recent.json?limit=1&page=' + offset,
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
